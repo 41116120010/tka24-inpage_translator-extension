@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TKA24 Translator Settings</title>
+    <style>
+      :root {
+        --bg-color: #1a1a1a;
+        --card-bg: #2d2d2d;
+        --text-color: #e0e0e0;
+        --accent-color: #6366f1; /* Indigo */
+        --input-bg: #404040;
+        --border-color: #555;
+        --success-color: #10b981;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        padding: 2rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 1rem;
+      }
+
+      .card {
+        background-color: var(--card-bg);
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        margin-bottom: 1.5rem;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #ccc;
+      }
+
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: var(--input-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        color: white;
+        font-family: monospace;
+        box-sizing: border-box; /* Important for padding */
+        transition: border-color 0.2s;
+      }
+
+      input[type="text"]:focus,
+      textarea:focus {
+        outline: none;
+        border-color: var(--accent-color);
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .helper-text {
+        font-size: 0.8rem;
+        color: #888;
+        margin-top: 0.25rem;
+      }
+
+      button {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: var(--accent-color);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+
+      button:hover {
+        opacity: 0.9;
+      }
+
+      #status {
+        margin-top: 1rem;
+        text-align: center;
+        font-size: 0.9rem;
+        height: 1.2rem;
+        color: var(--success-color);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      TKA24 Translator
+      <span style="font-size: 0.6em; color: #888">Dev Mode</span>
+    </h1>
+
+    <div class="card">
+      <label for="apiKey">Groq Cloud API Key</label>
+      <input type="text" id="apiKey" placeholder="gsk_..." />
+      <div class="helper-text">
+        Your key is stored locally and never shared.
+      </div>
+    </div>
+
+    <div class="card">
+      <label for="blacklist">Blacklisted Domains</label>
+      <textarea
+        id="blacklist"
+        placeholder="example.com&#10;localhost"
+      ></textarea>
+      <div class="helper-text">
+        One domain per line. The translator will not activate on these sites.
+      </div>
+    </div>
+
+    <button id="save">Save Settings</button>
+    <div id="status">Settings Saved!</div>
+
+    <script src="options.js"></script>
+  </body>
+</html>

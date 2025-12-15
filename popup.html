@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TKA24 Settings</title>
+    <style>
+      :root {
+        --bg-color: #1a1a1a;
+        --card-bg: #2d2d2d;
+        --text-color: #e0e0e0;
+        --accent-color: #6366f1;
+        --input-bg: #404040;
+        --border-color: #555;
+        --success-color: #10b981;
+      }
+
+      /* Light Mode Variables */
+      [data-theme="light"] {
+        --bg-color: #f3f4f6;
+        --card-bg: #ffffff;
+        --text-color: #1f2937;
+        --accent-color: #4f46e5;
+        --input-bg: #f9fafb;
+        --border-color: #d1d5db;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        padding: 1rem;
+        width: 320px; /* Fixed width for popup */
+        margin: 0;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 0.5rem;
+      }
+
+      h1 {
+        font-size: 1.1rem;
+        margin: 0;
+        font-weight: 600;
+      }
+
+      .theme-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2rem;
+        color: var(--text-color);
+        padding: 2px;
+        border-radius: 4px;
+      }
+
+      .theme-toggle:hover {
+        background-color: var(--input-bg);
+      }
+
+      .card {
+        background-color: var(--card-bg);
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1rem;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-weight: 600;
+        font-size: 0.85rem;
+      }
+
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 0.5rem;
+        background-color: var(--input-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        color: var(--text-color);
+        font-size: 0.9rem;
+        box-sizing: border-box;
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 60px;
+        font-family: monospace;
+      }
+
+      button#save {
+        width: 100%;
+        padding: 0.6rem;
+        background-color: var(--accent-color);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      button#save:hover {
+        opacity: 0.9;
+      }
+
+      #status {
+        text-align: center;
+        font-size: 0.8rem;
+        color: var(--success-color);
+        height: 1rem;
+        margin-top: 0.5rem;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>TKA24 Translator</h1>
+      <button id="themeToggle" class="theme-toggle" title="Toggle Theme">
+        🌙
+      </button>
+    </header>
+
+    <div class="card">
+      <label for="apiKey">Groq Cloud API Key</label>
+      <input type="text" id="apiKey" placeholder="gsk_..." />
+    </div>
+
+    <div class="card">
+      <label for="blacklist">Blacklisted Domains</label>
+      <textarea
+        id="blacklist"
+        placeholder="example.com&#10;localhost"
+      ></textarea>
+    </div>
+
+    <button id="save">Save Settings</button>
+    <div id="status">Saved!</div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

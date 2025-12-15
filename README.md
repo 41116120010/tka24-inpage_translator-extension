@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # TKA24 Translator Extension
+=======
+# TKA24 Translator - Dev Mode Extension
+>>>>>>> 357ced6 (Upload from Ubuntu)
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Chrome](https://img.shields.io/badge/Chrome-Extension-green.svg)
@@ -21,7 +25,11 @@ This extension is currently in **Developer Mode** and not on the Chrome Web Stor
 
 1.  Clone or Download this repository to your local machine.
     ```bash
+<<<<<<< HEAD
     git clone https://github.com/41116120010/tka24-inpage_translator-extension.git
+=======
+    git clone https://github.com/yourusername/TKA24_Translator.git
+>>>>>>> 357ced6 (Upload from Ubuntu)
     # Or just unzip the provided folder
     ```
 2.  Open Google Chrome and navigate to `chrome://extensions`.
@@ -70,3 +78,10 @@ To use the translation feature, you need a free API Key from Groq.
   - Check your internet connection.
   - Verify your API Key in the extension popup.
   - Check if the Groq model is currently online.
+<<<<<<< HEAD
+=======
+
+---
+
+_Created for TKA24 Project._
+>>>>>>> 357ced6 (Upload from Ubuntu)

@@ -1,0 +1,133 @@
+/* TKA24 Translator UI Styles */
+
+:root {
+    --tka24-bg: #1f2937;
+    --tka24-text: #f3f4f6;
+    --tka24-border: #374151;
+    --tka24-shadow: rgba(0, 0, 0, 0.5);
+    --tka24-accent: #6366f1;
+}
+
+/* Light Mode Override (Applied by JS injection or class on container) */
+.tka24-light-mode {
+    --tka24-bg: #ffffff;
+    --tka24-text: #1f2937;
+    --tka24-border: #e5e7eb;
+    --tka24-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Base container */
+.tka24-translator-container {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    z-index: 2147483647;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+/* Floating Action Button (Absolute near selection) */
+.tka24-fab {
+    position: absolute; /* Still absolute near text */
+    width: 32px;
+    height: 32px;
+    background-color: var(--tka24-accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    font-size: 16px;
+    transition: transform 0.2s, background-color 0.2s;
+    user-select: none;
+    border: none;
+    padding: 0;
+}
+
+.tka24-fab:hover {
+    transform: scale(1.1);
+    background-color: #4f46e5;
+}
+
+/* Spinner State */
+.tka24-fab.loading {
+    cursor: wait;
+    background-color: #888;
+}
+
+.tka24-fab.loading::after {
+    content: "";
+    width: 14px;
+    height: 14px;
+    border: 2px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: tka24-spin 1s linear infinite;
+    position: absolute;
+}
+
+@keyframes tka24-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Result Bubble (Fixed Sidebar) */
+.tka24-result-bubble {
+    position: fixed; /* FIXED positioning */
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    max-height: 90vh;
+    overflow-y: auto;
+    
+    background-color: var(--tka24-bg);
+    color: var(--tka24-text);
+    border: 1px solid var(--tka24-border);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 10px 25px var(--tka24-shadow);
+    font-size: 14px;
+    animation: tka24-slide-in 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tka24-result-bubble h5 {
+    margin: 0 0 12px 0;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #9ca3af; /* Gray-400 equivalent, usually safe on both modes */
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    border-bottom: 1px solid var(--tka24-border);
+    padding-bottom: 8px;
+}
+
+.tka24-result-content {
+    font-family: 'Consolas', 'Monaco', monospace;
+    white-space: pre-wrap;
+    line-height: 1.4;
+    color: var(--tka24-text);
+}
+
+/* Close Button */
+.tka24-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.tka24-close-btn:hover {
+    color: var(--tka24-text);
+    background-color: var(--tka24-border);
+}
+
+@keyframes tka24-slide-in {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
