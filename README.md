@@ -70,5 +70,3 @@ To use the translation feature, you need a free API Key from Groq.
   - Check your internet connection.
   - Verify your API Key in the extension popup.
   - Check if the Groq model is currently online.
-
-_Created for TKA24 Project._
