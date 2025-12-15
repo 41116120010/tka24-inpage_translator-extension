@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# TKA24 Translator Extension
-=======
 # TKA24 Translator - Dev Mode Extension
->>>>>>> 357ced6 (Upload from Ubuntu)
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Chrome](https://img.shields.io/badge/Chrome-Extension-green.svg)
@@ -78,10 +74,3 @@ To use the translation feature, you need a free API Key from Groq.
   - Check your internet connection.
   - Verify your API Key in the extension popup.
   - Check if the Groq model is currently online.
-<<<<<<< HEAD
-=======
-
----
-
-_Created for TKA24 Project._
->>>>>>> 357ced6 (Upload from Ubuntu)
